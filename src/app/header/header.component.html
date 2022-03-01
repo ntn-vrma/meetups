@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <div class="left">
+        <h4>Meetups</h4>
+    </div>
+    <div class="right">
+        <a (click)="getAllMeetings()">All Meetups</a>
+        <a (click)="newMeetHandler()">New Meetup</a>
+        <a *ngIf="isLogin" (click)="favoritesHandler()">Favorites</a>
+        <app-button *ngIf="!isLogin" [buttonSpecs]="loginButton" (clicked)="onLogin()">Login</app-button>
+        <app-button *ngIf="isLogin" [buttonSpecs]="logoutButton" (clicked)="onLogout()">Logout</app-button>
+    </div>
+</nav>

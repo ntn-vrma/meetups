@@ -1,0 +1,6 @@
+<div class="container">
+    <span *ngIf="favorites.length < 1">You don't have any favorites added yet!</span>
+    <div class="child" *ngFor="let meeting of favorites">
+        <app-favorite [meetup]="meeting"></app-favorite>
+    </div>
+</div> 

@@ -1,0 +1,16 @@
+<h3>Add a New Meetup</h3>
+<div class="container">
+    <div class="child" >
+        <form  (submit)="onSubmit()">
+            <label>Meeting Title</label>
+            <input name="title" [(ngModel)]="meetingSpecs.title" />
+            <label>Meeting Image</label>
+            <input name="image" [(ngModel)]="meetingSpecs.image" />
+            <label>Address</label>
+            <input name="address" [(ngModel)]="meetingSpecs.address"/>
+            <label>Description</label>
+            <textarea class="form-control" name="description" [(ngModel)]="meetingSpecs.description"></textarea>
+            <app-button [buttonSpecs]="buttonSpecs">Add Meetup</app-button>
+        </form>
+    </div>
+</div>

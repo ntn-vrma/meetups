@@ -1,0 +1,3 @@
+<!-- <input [type]=type [(ngModel)]="textboxData" [ngClass]="{'red':!classBit,'blue':classBit}" (change)="onChange($event)" placeholder={{boxName}}/> -->
+ <input  [style]="textSpecs.style" [type]="textSpecs.type" [(ngModel)]="textSpecs.value" [placeholder]=textSpecs.placeholder (blur)="textSpecs.isValid()">
+ <span style="color:RED;" *ngIf="!textSpecs.valid">{{textSpecs.msg}}</span>

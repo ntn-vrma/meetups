@@ -1,0 +1,23 @@
+.right{
+    margin-right: 20px;
+    float: right;
+}
+.left
+{
+    margin-left: 20px;
+    float:left;
+}
+.navbar{
+    color: white;
+    width: auto;
+    background-color: rgb(105, 37, 37);
+}
+a{
+    float: left;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
