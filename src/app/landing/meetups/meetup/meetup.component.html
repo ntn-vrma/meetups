@@ -6,6 +6,8 @@
         <p class="card-text">{{meetup.address}}</p>
         <button (click)="addToFavorite()" class="btn btn-primary">Add to favourite</button>
         <br/>
-        <span *ngIf="flag" style="color:chocolate">Added to Favorites!</span>
+        <span *ngIf="flag" style="color:green">Added to Favorites!</span>
+        <br/>
+        <span *ngIf="ifExists" style="color:red">The meetup is Aleady in Favorites!</span>
     </div>
 </div>
