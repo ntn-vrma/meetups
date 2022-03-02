@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit, Output,EventEmitter} from "@angular/core";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { take } from "rxjs";
 import { ValidationService } from "src/app/services";
 import { MeetingsService } from "src/app/services/meetings";
 
@@ -14,7 +14,8 @@ import { MeetingsService } from "src/app/services/meetings";
 export class MeetingComponent{
     constructor(private _meeting:MeetingsService,
                 private _validate:ValidationService,
-                private _router:Router){
+                private _router:Router,
+                private _http:HttpClient){
     }
 
     meetingSpecs={
@@ -39,11 +40,20 @@ export class MeetingComponent{
         else{
             if((this.meetingSpecs.title.length && this.meetingSpecs.description.length
                 && this.meetingSpecs.address.length && this.meetingSpecs.image.length)){
-                    this._meeting.addtoMeetups(this.meetingSpecs)
+                    //this._meeting.addtoMeetups(this.meetingSpecs)
+                    this._http.post('https://meetup-88c8c-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json',
+                    {
+                        title:this.meetingSpecs.title,
+                        description: this.meetingSpecs.description,
+                        image:this.meetingSpecs.image,
+                        address:this.meetingSpecs.address
+                    })
+                    .pipe(take(1))
+                    .subscribe((res)=>{
+                        console.log(res);
+                    })
                     this._router.navigateByUrl('/meetups')
             }
-            alert("enter valid details")
         }
-
     }
 }

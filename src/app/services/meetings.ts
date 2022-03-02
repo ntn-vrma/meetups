@@ -12,6 +12,8 @@ export class MeetingsService{
             this.allMeetups.push(meetupToAdd)
         }
     }
+
+    
     
     getAllMeetups(){
        
