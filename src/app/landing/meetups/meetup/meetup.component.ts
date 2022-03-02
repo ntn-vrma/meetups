@@ -10,7 +10,7 @@ import { MeetingsService } from "src/app/services/meetings";
 })
 export class Meetup{
     @Input() meetup:any;
-
+    flag=false;
     constructor(private validate:ValidationService,
                 private router:Router,
                 private _meetup:MeetingsService){    }
@@ -18,9 +18,11 @@ export class Meetup{
     addToFavorite(){
          if(this.validate.userToken.length<1){
              this.router.navigateByUrl('/login');
+             this.flag=false;
          }
          else{
             this._meetup.addToFavorite(this.meetup)
+            this.flag=true
         }
     }
 

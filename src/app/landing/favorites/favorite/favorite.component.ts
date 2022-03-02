@@ -9,6 +9,7 @@ import { MeetingsService, ValidationService } from "src/app/services";
 })
 export class FavoriteComponent{
     @Input() meetup:any;
+    
     constructor(private _meetup:MeetingsService, private validate:ValidationService,
         private router:Router){
 
