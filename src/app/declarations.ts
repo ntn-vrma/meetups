@@ -3,7 +3,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
-import { LoginComponent, MeetingComponent, Meetup,LoadingComponent, MeetingsComponent, FavoriteComponent, FavoritesComponent, AboutComponent } from "./landing";
+import { LoginComponent, MeetingComponent, Meetup,LoadingComponent,
+        MeetingsComponent, FavoriteComponent, FavoritesComponent,
+        AboutComponent, ContactComponent } from "./landing";
 import { ButtonComponent, LinksComponent, TextboxComponent } from "./UI";
 import { ValidationService, MeetingsService } from "./services";
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +28,8 @@ export const components=[
     FavoriteComponent,
     LoadingComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
 ]
 export const providers=[
     ValidationService,
