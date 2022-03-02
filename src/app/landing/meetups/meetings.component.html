@@ -1,4 +1,5 @@
 <div class="container">
+    <span *ngIf="array.length<1">Loading Data...</span>
     <div class="child" *ngFor="let meeting of array">
         <app-meetup [meetup]="meeting"></app-meetup>
     </div>

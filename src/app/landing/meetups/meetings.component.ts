@@ -9,7 +9,6 @@ import { MeetingsService } from "src/app/services/meetings";
 })
 export class MeetingsComponent implements OnInit{
 
-
     array:any=[];
     
     constructor(private _http: HttpClient, private _meetings:MeetingsService) {
@@ -20,15 +19,15 @@ export class MeetingsComponent implements OnInit{
     ngOnInit(): void {
         this.getAllMeetups();
     }
+
     getAllMeetups() {
-        
         this._http.get('https://meetup-88c8c-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json')
         .subscribe((res:any)=>{
             for(let meetup in res){
                 res[meetup].id=meetup;
                 this._meetings.addtoMeetups(res[meetup])
             }
-        })
+        });
     }
     
 

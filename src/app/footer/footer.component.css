@@ -1,0 +1,29 @@
+.content{
+    align-content: center;
+}
+.footer{
+    color: rgb(255, 255, 255);
+    bottom: 0;
+    left:0;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    background-color: rgb(105, 37, 37);
+}
+.right{
+    margin-top: 8px;
+    margin-right: 20px;
+    float: right;
+}
+.left
+{
+    margin-top: 8px;
+    margin-left: 20px;
+    float:left;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+}

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoadingComponent, LoginComponent, MeetingComponent, MeetingsComponent } from './landing';
+import { AboutComponent, LoadingComponent, LoginComponent, MeetingComponent, MeetingsComponent } from './landing';
 import { FavoritesComponent } from './landing/favorites/favorites.component';
 
 const routes: Routes = [
@@ -8,7 +8,8 @@ const routes: Routes = [
   { path:'meetups', component:MeetingsComponent },
   { path:'login', component:LoginComponent },
   { path:'favorites', component:FavoritesComponent },
-  { path:'loading', component:LoadingComponent }
+  { path:'loading', component:LoadingComponent },
+  { path:'about', component:AboutComponent }
 ];
 
 @NgModule({
