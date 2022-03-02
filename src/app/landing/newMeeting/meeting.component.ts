@@ -34,26 +34,6 @@ export class MeetingComponent{
     }
 
     onSubmit(){
-        if(this._validate.userToken.length<1){
-            this._router.navigateByUrl('/login')
-        }
-        else{
-            if((this.meetingSpecs.title.length && this.meetingSpecs.description.length
-                && this.meetingSpecs.address.length && this.meetingSpecs.image.length)){
-                    //this._meeting.addtoMeetups(this.meetingSpecs)
-                    this._http.post('https://meetup-88c8c-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json',
-                    {
-                        title:this.meetingSpecs.title,
-                        description: this.meetingSpecs.description,
-                        image:this.meetingSpecs.image,
-                        address:this.meetingSpecs.address
-                    })
-                    .pipe(take(1))
-                    .subscribe((res)=>{
-                        console.log(res);
-                    })
-                    this._router.navigateByUrl('/meetups')
-            }
-        }
+        this._meeting.postToAPI(this.meetingSpecs)
     }
 }
