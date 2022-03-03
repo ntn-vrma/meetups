@@ -1,0 +1,7 @@
+.body{
+    margin:auto;
+    margin-top:30px;
+    width: 30%;
+    padding: 10px;
+    min-height: calc(100vh - 70px);
+}

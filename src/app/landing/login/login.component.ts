@@ -14,6 +14,8 @@ export class LoginComponent{
 
     }
     errorMessage='';
+    
+    loginButton=false;
 
     username={
         value:'',
@@ -73,8 +75,10 @@ export class LoginComponent{
 
       onSubmit()
       {
+        
         if((this.username.isValid() && this.password.isValid()))
         {
+          this.loginButton=true;
           this._http.post('https://reqres.in/api/login',{
             "email": this.username.value,
             "password": this.password.value
@@ -83,6 +87,7 @@ export class LoginComponent{
                   .subscribe( 
                         (response:any)=>
                         {
+                          
                           this.errorMessage = '';
                           this._validate.setToken(response.token);
                           this.router.navigateByUrl('/meetups')
@@ -91,7 +96,9 @@ export class LoginComponent{
                         (err)=>
                         {
                           this.errorMessage = err.error.error;
+                          this.loginButton=false;
                           this._validate.userLoggedIn.next(false);
+                          this.router.navigateByUrl('/login')
                         }  
                     )
         }

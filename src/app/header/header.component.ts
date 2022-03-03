@@ -10,7 +10,7 @@ import { ValidationService } from "../services";
 export class HeaderComponent{
     isLogin=false;
     @Output() headerEvent =new EventEmitter();
-    constructor(private router:Router,private _loggedIn:ValidationService)
+    constructor(private router:Router, private _loggedIn:ValidationService)
     {
         this._loggedIn.userLoggedIn.subscribe((res:any)=>{
             this.isLogin=res
@@ -29,25 +29,34 @@ export class HeaderComponent{
             value: false
         })
     }
-    newMeeting={}
 
     loginButton={
         buttonClass:'btn btn-primary btn-sm',
         style:'margin:6px',
         disable:true
-      }
-      logoutButton={
+    }
+
+    logoutButton={
         buttonClass:'btn btn-primary btn-sm',
         style:'margin:6px',
         disable:true
-      }
-      newMeetHandler(){
-          this.router.navigateByUrl('/newMeetup')
-      }
-      favoritesHandler(){
-        this.router.navigateByUrl('/favorites')
-      }
-      getAllMeetings(){
+    }
+
+    newMeetHandler(){
+        this.router.navigateByUrl('/newMeetup')
+    }
+
+    favoritesHandler(){
+        if(this.isLogin){
+            this.router.navigateByUrl('/favorites')
+        }
+        else{
+            this.router.navigateByUrl('/login')
+        }
+        
+    }
+    
+    getAllMeetings(){
         this.router.navigateByUrl('/meetups')
-      }
+    }
 }

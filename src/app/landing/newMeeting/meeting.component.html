@@ -10,7 +10,7 @@
             <input name="address" [(ngModel)]="meetingSpecs.address"/>
             <label>Description</label>
             <textarea class="form-control" name="description" [(ngModel)]="meetingSpecs.description"></textarea>
-            <app-button [buttonSpecs]="buttonSpecs">Add Meetup</app-button>
+            <app-button *ngIf="!submitbutton" [buttonSpecs]="buttonSpecs">Add Meetup</app-button>
         </form>
     </div>
 </div>

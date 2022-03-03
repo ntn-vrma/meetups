@@ -1,13 +1,17 @@
-<div class="container">
-    <h3>Login</h3>
-    <div class="child">
-        <form (submit)="onSubmit()">
-            <span *ngIf="errorMessage.length > 0" style="color: red;">{{errorMessage}}</span><br/>
-            <label for="username">Username</label><br>
-            <app-textbox [textSpecs]="username"></app-textbox><br>
-            <label for="password">Password</label><br>
-            <app-textbox [textSpecs]="password"></app-textbox>
-            <app-button [buttonSpecs]="buttonSpecs">Login</app-button>
-        </form>
+<div class="body">
+    <div class="container">
+        <h3>Login</h3>
+        <div class="child">
+            <form (submit)="onSubmit()">
+                <span *ngIf="errorMessage.length > 0" style="color: red;">{{errorMessage}}</span><br/>
+                <label for="username">Username</label><br>
+                <app-textbox [textSpecs]="username"></app-textbox><br>
+                <label for="password">Password</label><br>
+                <app-textbox [textSpecs]="password"></app-textbox>
+                <app-button *ngIf="!loginButton" [buttonSpecs]="buttonSpecs">Login</app-button>
+            </form>
+        </div>
     </div>
 </div>
+
+

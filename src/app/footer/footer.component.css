@@ -1,14 +1,16 @@
 .content{
     align-content: center;
 }
-.footer{
+footer{
     color: rgb(255, 255, 255);
     bottom: 0;
     left:0;
-    height: auto;
+    
     width: 100%;
-    position: fixed;
-    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0px;
+    
     background-color: rgb(105, 37, 37);
 }
 .right{

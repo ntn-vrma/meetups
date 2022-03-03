@@ -12,11 +12,14 @@ import { MeetingsService } from "src/app/services/meetings";
     styleUrls:['./meeting.component.css']
 })
 export class MeetingComponent{
+    submitbutton=false;
     constructor(private _meeting:MeetingsService,
                 private _validate:ValidationService,
                 private _router:Router,
                 private _http:HttpClient){
+                    this.submitbutton=this._meeting.newMeetingButton
     }
+
 
     meetingSpecs={
         id: Math.floor((Math.random() * 1000) + 1),

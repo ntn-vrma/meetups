@@ -11,6 +11,7 @@ import { ValidationService, MeetingsService } from "./services";
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from "@angular/common";
 import { FooterComponent } from "./footer/footer.component";
+import { ViewMeetupComponent } from "./landing/meetups/viewMeetup/viewMeetup.component";
 
 
 
@@ -29,7 +30,8 @@ export const components=[
     LoadingComponent,
     FooterComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ViewMeetupComponent
 ]
 export const providers=[
     ValidationService,

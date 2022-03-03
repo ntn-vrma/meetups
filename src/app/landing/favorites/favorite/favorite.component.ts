@@ -20,9 +20,14 @@ export class FavoriteComponent{
         }
         else{
             this._meetup.removeFromFavorites(this.meetup)
+            this._meetup.favoriteButton.next(false)
             this.router.navigateByUrl('/loading', { skipLocationChange: true }).then(() => {
                 this.router.navigateByUrl('/favorites');
             }); 
         }
+    }
+    clickHandler(){
+        let id=this.meetup.id;
+        this.router.navigateByUrl('/meetups/'+id)
     }
 }

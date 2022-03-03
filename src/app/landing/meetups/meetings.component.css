@@ -1,7 +1,12 @@
 .container{
     margin:auto;
+    
     width: 80%;
     padding: 10px;
+   
+}
+.content{
+    min-height: calc(100vh - 70px);
 }
 .child{
     margin:auto;

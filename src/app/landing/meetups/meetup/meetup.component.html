@@ -1,13 +1,11 @@
 <div class="card" >
     <img class="card-img" [src]="meetup.image">
     <div class="card-body">
-        <h5 class="card-title">{{meetup.title}} </h5>
+        <h5 class="card-title"><a (click)="clickHandler()">{{meetup.title}}</a> </h5>
         <p class="card-text">{{meetup.description}}</p>
         <p class="card-text">{{meetup.address}}</p>
-        <button (click)="addToFavorite()" class="btn btn-primary">Add to favourite</button>
+        <button *ngIf="!ifExists" (click)="addToFavorite()" class="btn btn-primary">Add to favourite</button>
+        <button *ngIf="ifExists" (click)="onRemove()"  class="btn btn-primary">Remove from favourite</button>
         <br/>
-        <span *ngIf="flag" style="color:green">Added to Favorites!</span>
-        <br/>
-        <span *ngIf="ifExists" style="color:red">The meetup is Aleady in Favorites!</span>
     </div>
 </div>
