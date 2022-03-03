@@ -21,8 +21,6 @@ export class ViewMeetupComponent implements OnInit{
                 }
 
     ngOnInit(): void {
-        
-        
         this._active.params.subscribe((res:any)=>{
                 const id= this._active.snapshot.paramMap.get("id");
                 this.meetup=this._meetup.getDetails(id)

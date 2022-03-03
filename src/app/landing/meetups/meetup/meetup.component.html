@@ -1,7 +1,7 @@
 <div class="card" >
     <img class="card-img" [src]="meetup.image">
     <div class="card-body">
-        <h5 class="card-title"><a (click)="clickHandler()">{{meetup.title}}</a> </h5>
+        <h5 class="card-title"><a (click)="clickHandler()">{{meetup.title}}</a></h5>
         <p class="card-text">{{meetup.description}}</p>
         <p class="card-text">{{meetup.address}}</p>
         <button *ngIf="!ifExists" (click)="addToFavorite()" class="btn btn-primary">Add to favourite</button>

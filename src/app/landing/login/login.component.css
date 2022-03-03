@@ -14,8 +14,8 @@
 }
 .child{
     position: relative;
-    margin-top: 10px;
+    margin-top: 3px;
 }
 h3{
-    margin:6px;
+    padding: 5px;
 }
